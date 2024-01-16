@@ -1,8 +1,8 @@
 import { useState } from "react";
 import "./App.css";
-
+import MyRouter from "./Router/Router";
 function App() {
-  return <h1>this is a chat app</h1>;
+  return <MyRouter />;
 }
 
 export default App;

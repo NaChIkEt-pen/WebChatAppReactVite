@@ -35,6 +35,13 @@ app.get('/', async (req, res) => {
   }
 })
 
+// app.post('/insert', async (req, res) => {
+//   try {
+//     await Chats.insertOne({"name": "nachiket", "age" : 25})
+//   } catch {
+//     res.status(500)
+//   }
+// })
 app.listen(3000, () => {
   console.log('Server Started')
 })
