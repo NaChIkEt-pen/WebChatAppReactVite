@@ -1,9 +1,9 @@
-p{
+/* p{
     width : auto;
     margin: 0px;
     border: 2.5px solid lightgrey;
     height: 50px;
-}
+} */
 
 .SecondDiv{
     display: flex;

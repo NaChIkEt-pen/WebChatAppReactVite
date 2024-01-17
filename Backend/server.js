@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const mongoose = require('mongoose');
 const cors = require("cors");
+const { BSON } = require('mongodb');
 
 // const corsOptions = {
 //   origin: "http://localhost:5173",
@@ -18,12 +19,16 @@ db.on('error', (error) => console.error(error))
 db.once('open',() => console.log('Connected to db'))
 
 const schema = new mongoose.Schema({
-  name: {
+  time: {
     type: String,
     required:true
   },
-  age: {
-    type: Number,
+  userName: {
+    type: String,
+    required:true
+  },
+  msg: {
+    type: String,
     required:true
   }
 })

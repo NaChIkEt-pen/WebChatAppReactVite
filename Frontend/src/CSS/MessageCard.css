@@ -1,0 +1,31 @@
+.fullTime{
+    display: flex;
+    flex-direction: column;
+}
+
+.p1,.p2{
+    margin: 0px;
+}
+.userName{
+    margin-left: 10%;
+    /* width: 800px; */
+}
+.msg{
+margin-left: 20%
+}
+.messageCard{
+    display: flex;
+    flex-direction: row;
+    margin: 0px;
+}
+.userMsg{
+    display: flex;
+    flex-direction: row;
+    margin: 0px;
+}
+/* .vertical {
+    border-left: 6px solid black;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+} */
