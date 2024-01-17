@@ -1,0 +1,40 @@
+p{
+    width : auto;
+    margin: 0px;
+    border: 2.5px solid lightgrey;
+    height: 50px;
+}
+
+.SecondDiv{
+    display: flex;
+    flex-direction: row;
+    margin-top: auto;
+    border: 2.5px solid lightgrey;
+    height: 50px;
+}
+.Btn{
+    flex: 1;
+    height: 50.5px;
+}
+.MainDiv{
+    border: 2.5px solid lightgray;
+    width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.ChatDiv{
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+input{
+    width: 90%;
+    height: 45px;
+}

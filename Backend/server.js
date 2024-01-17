@@ -1,7 +1,15 @@
 const express = require('express')
 const app = express()
 const mongoose = require('mongoose');
+const cors = require("cors");
 
+// const corsOptions = {
+//   origin: "http://localhost:5173",
+// };
+
+// app.use(cors(corsOptions));
+
+app.use(cors())
 mongoose.connect('mongodb://0.0.0.0:27017/ChatApp');
 
 const db = mongoose.connection
@@ -19,6 +27,7 @@ const schema = new mongoose.Schema({
     required:true
   }
 })
+
 
 const Chats = mongoose.model('chats', schema)
 
