@@ -15,7 +15,7 @@ export default function BroadcastPage() {
     return () => clearTimeout(timer);
   }, []);
   useEffect(() => {
-    fetch("http://localhost:3000/")
+    fetch(`http://localhost:3000/${input.broadID}`)
       .then((res) => res.json())
       .then((result) => {
         //console.log(result);

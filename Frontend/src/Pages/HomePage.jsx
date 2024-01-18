@@ -9,11 +9,27 @@ export default function HomePage() {
     const value = event.target.value;
     setInput((values) => ({ ...values, [name]: value }));
   };
-  const handleSubmit = (event) => {
+
+  const checkBroadID = (event) => {
+    return new Promise(async (resolve, reject) => {
+      if (
+        event != undefined &&
+        event.broadID != undefined &&
+        event.userName != undefined
+      ) {
+        resolve("success");
+      } else {
+        reject("BroadCast ID should be a number and userName should be String");
+      }
+    });
+  };
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
     window.sessionStorage.setItem("input", JSON.stringify(input));
     console.log(window.sessionStorage.getItem("input"));
     if (input.broadID != undefined && input.userName != undefined) {
+      await checkBroadID(input);
       navigate("/broadcast");
     }
   };

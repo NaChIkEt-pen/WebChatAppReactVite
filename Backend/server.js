@@ -16,36 +16,38 @@ mongoose.connect('mongodb://0.0.0.0:27017/ChatApp');
 const db = mongoose.connection
 
 db.on('error', (error) => console.error(error))
-db.once('open',() => console.log('Connected to db'))
+db.once('open', () => console.log('Connected to db'))
 
 const schema = new mongoose.Schema({
   time: {
     type: String,
-    required:true
+    required: true
   },
   userName: {
     type: String,
-    required:true
+    required: true
   },
   msg: {
     type: String,
-    required:true
+    required: true
   }
 })
 
 
-const Chats = mongoose.model('chats', schema)
+
 
 app.use(express.json())
 
 
 
-app.get('/', async (req, res) => {
+app.get('/:id', async (req, res) => {
+
+  const Chats = mongoose.model(req.params.id, schema)
   try {
     const chats = await Chats.find()
     res.json(chats)
   } catch {
-    res.status(500).json({message : err.message})
+    res.status(500).json({ message: err.message })
   }
 })
 
