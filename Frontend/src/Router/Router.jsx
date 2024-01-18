@@ -7,7 +7,7 @@ function MyRouter() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
-      <Route path="/broadcast" element={<BroadcastPage />} />
+      <Route path="/broadcast/:id" element={<BroadcastPage />} />
     </Routes>
   );
 }

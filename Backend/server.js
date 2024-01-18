@@ -33,7 +33,7 @@ const schema = new mongoose.Schema({
   }
 })
 
-
+// , { versionKey: false }
 
 
 app.use(express.json())
@@ -51,13 +51,21 @@ app.get('/:id', async (req, res) => {
   }
 })
 
-// app.post('/insert', async (req, res) => {
-//   try {
-//     await Chats.insertOne({"name": "nachiket", "age" : 25})
-//   } catch {
-//     res.status(500)
-//   }
-// })
+app.post('/insert/msg/:id', async (req, res) => {
+  //console.log(req.body)
+  const Chats = mongoose.model(req.params.id, schema)
+  const data = new Chats({
+  "time": req.body.time,
+  "userName": req.body.userName,
+  "msg": req.body.msg,})
+  try {
+    const val = await data.save();
+    res.json(val)
+  } catch(error) {
+    console.error(error);
+    res.status(500).send('Internal Server Error');
+  }
+})
 app.listen(3000, () => {
   console.log('Server Started')
 })

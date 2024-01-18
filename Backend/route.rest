@@ -1,4 +1,4 @@
 GET http://localhost:3000/101
 
 ###
-POST http://localhost:3000/insert
+POST http://localhost:3000/insert/msg/101

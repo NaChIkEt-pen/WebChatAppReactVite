@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import BroadcastPage from "./BroadcastPage";
+import "../CSS/HomePage.css";
 export default function HomePage() {
   const [input, setInput] = useState({});
   const navigate = useNavigate();
@@ -30,7 +31,7 @@ export default function HomePage() {
     console.log(window.sessionStorage.getItem("input"));
     if (input.broadID != undefined && input.userName != undefined) {
       await checkBroadID(input);
-      navigate("/broadcast");
+      navigate(`/broadcast/${input.broadID}`);
     }
   };
   return (
@@ -39,6 +40,7 @@ export default function HomePage() {
         <label>
           Enter Broadcast ID:
           <input
+            className="TextInput"
             type="text"
             name="broadID"
             value={input.broadID || ""}
@@ -49,6 +51,7 @@ export default function HomePage() {
         <label>
           Enter UserName:
           <input
+            className="TextInput"
             type="text"
             name="userName"
             value={input.userName || ""}
@@ -56,7 +59,7 @@ export default function HomePage() {
             placeholder="Enter UserName"
           />
         </label>
-        <input type="submit" />
+        <input type="submit" className="TextInput" />
       </form>
     </>
   );
