@@ -66,6 +66,6 @@ app.post('/insert/msg/:id', async (req, res) => {
     res.status(500).send('Internal Server Error');
   }
 })
-app.listen(20, () => {
+app.listen(3000, () => {
   console.log('Server Started')
 })
