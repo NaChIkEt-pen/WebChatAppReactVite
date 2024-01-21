@@ -45,7 +45,8 @@ export default function BroadcastPage() {
     //   .catch((err) => console.log(err));
     const fetchData = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/${input.broadID}`);
+        // http://localhost:3000/ https://rps3d0t2-3000.inc1.devtunnels.ms/
+        const response = await fetch(`http://localhost:20/${input.broadID}`);
         const result = await response.json();
         setTableData(result);
       } catch (error) {
@@ -70,9 +71,9 @@ export default function BroadcastPage() {
   const handleSendMessage = (event) => {
     event.preventDefault();
     console.log(msg);
-    const date = new Date();
+    const date = new Date(); //http://localhost:3000/insert/msg/ https://rps3d0t2-3000.inc1.devtunnels.ms/insert/msg/
     const isoDate = date.toISOString();
-    fetch(`http://localhost:3000/insert/msg/${input.broadID}`, {
+    fetch(`http://localhost:20/insert/msg/${input.broadID}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

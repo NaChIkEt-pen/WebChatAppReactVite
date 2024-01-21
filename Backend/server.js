@@ -11,7 +11,7 @@ const { BSON } = require('mongodb');
 // app.use(cors(corsOptions));
 
 app.use(cors())
-mongoose.connect('mongodb://0.0.0.0:27017/ChatApp');
+mongoose.connect('mongodb+srv://nachiketpensalwar:nachiket@mymongo.mgg14we.mongodb.net/ChatApp');
 
 const db = mongoose.connection
 
@@ -66,6 +66,6 @@ app.post('/insert/msg/:id', async (req, res) => {
     res.status(500).send('Internal Server Error');
   }
 })
-app.listen(3000, () => {
+app.listen(20, () => {
   console.log('Server Started')
 })
